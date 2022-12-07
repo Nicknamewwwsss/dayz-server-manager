@@ -1,12 +1,12 @@
 # DayZ Server Manager
 
-[![Pricing](https://img.shields.io/badge/Pricing-FREE-green.svg)](https://github.com/mr-guard/dayz-server-manager/)
-[![license](https://img.shields.io/github/license/mr-guard/dayz-server-manager.svg)](https://github.com/mr-guard/dayz-server-manager/blob/master/LICENSE)
-![GitHub Workflow Status](https://github.com/mr-guard/dayz-server-manager/actions/workflows/build.yml/badge.svg)  
+[![Pricing](https://img.shields.io/badge/Pricing-FREE-green.svg)](https://github.com/Dev-Time/dayz-server-manager/)
+[![license](https://img.shields.io/github/license/Dev-Time/dayz-server-manager.svg)](https://github.com/Dev-Time/dayz-server-manager/blob/master/LICENSE)
+![GitHub Workflow Status](https://github.com/Dev-Time/dayz-server-manager/actions/workflows/build.yml/badge.svg)  
 
-[![GitHub release](https://img.shields.io/github/release/mr-guard/dayz-server-manager.svg)](https://GitHub.com/mr-guard/dayz-server-manager/releases/)
-[![GitHub commits](https://img.shields.io/github/commits-since/mr-guard/dayz-server-manager/latest.svg)](https://GitHub.com/mr-guard/dayz-server-manager/commit/)
-[![Github all releases](https://img.shields.io/github/downloads/mr-guard/dayz-server-manager/total.svg)](https://GitHub.com/mr-guard/dayz-server-manager/releases/)  
+[![GitHub release](https://img.shields.io/github/release/Dev-Time/dayz-server-manager.svg)](https://GitHub.com/Dev-Time/dayz-server-manager/releases/)
+[![GitHub commits](https://img.shields.io/github/commits-since/Dev-Time/dayz-server-manager/latest.svg)](https://GitHub.com/Dev-Time/dayz-server-manager/commit/)
+[![Github all releases](https://img.shields.io/github/downloads/Dev-Time/dayz-server-manager/total.svg)](https://GitHub.com/Dev-Time/dayz-server-manager/releases/)  
 
 
 This tool aims to simplify the process of setting up a DayZ Standalone Server on a Windows Server.  
@@ -117,7 +117,7 @@ The goal was to break down the initial effort to a minimum while providing confi
 <br><a name="usage"></a>
 ## Usage <hr>  
 
-* Download the [latest version](https://github.com/mr-guard/dayz-server-manager/releases/latest) of the manager
+* Download the [latest version](https://github.com/Dev-Time/dayz-server-manager/releases/latest) of the manager
 * Extract the manager and the config template
 * Copy and rename the config template to `server-manager.json`
 * Edit the `server-manager.json` config to fit your needs

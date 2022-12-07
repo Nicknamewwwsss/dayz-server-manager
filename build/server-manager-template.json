@@ -1,0 +1,418 @@
+{
+    /**
+     * The instance name of this server
+     */
+    "instanceId": "dayz",
+
+    /**
+     * Manager log level
+     */
+    "loglevel": 1,
+
+    ///////////////////////////// Admins ////////////////////////////////////////
+
+    /**
+     * The web or discord users allowed to use the web interface or the bot commands and which of them
+     * 
+     * level can be one of:
+     *  admin - guess what? ... everything
+     *  manage - able to perform management tasks such as restarts and updates (and everything below)
+     *  moderate - able to perform moderation tasks such as server messages, kicks and bans (and everything below)
+     *  view - able to query the server status and ingame situation (ie. player list, objects, etc)
+     * 
+     * if the id does not contain a '#', the user is exclusive to webview
+     * the password is only used for the web interface and API
+     * 
+     * example:
+     * {
+     *     "userId": "Senfo#5128",
+     *     "password": "admin",
+     *     "userLevel": "admin"
+     * }
+     */
+    "admins": [
+        {
+            "userId": "admin",
+            "userLevel": "admin",
+            "password": "admin"
+        }
+    ],
+
+    ///////////////////////////// WEB ////////////////////////////////////////
+
+    /**
+     * The port of the web interface and REST API
+     * 
+     * if -1 or 0 it will be serverport + 11
+     */
+    "webPort": 0,
+
+    /**
+     * Whether or not to publish the WebUI or not
+     * 
+     * if this is enabled, the webserver host is 0.0.0.0 rather than localhost
+     * this can be a security risk, so better leave this turned off if you dont know what this means
+     * and use a browser on your server to connect to the web ui via localhost
+     * 
+     * if you want to publish the web ui, it is recommended to use a reverse proxy (such as nginx)
+     * and secure the connection to the reverse proxy with a SSL Cert for HTTPS
+     * (because this app wont provide HTTPS capabilities)
+     */
+    "publishWebServer": false,
+
+    ///////////////////////////// Discord ////////////////////////////////////////
+
+    /**
+     * Bot Token for Discord
+     * Leave it empty to disable the bot
+     */
+    "discordBotToken": "",
+
+    /**
+     * Channels the discord commands will work in
+     * by default (if the channel is not listed), only public discord commands are allowed
+     * 
+     * Modes:
+     * 'admin' - admin commands are allowed in this channel
+     * 'rcon' - rcon relay (rcon messages will be posted there)
+     */
+    "discordChannels": [],
+
+    /**
+     * Use the experimental server or not
+     * Default is false
+     */
+    "experimentalServer": false,
+
+    ///////////////////////////// DayZ ////////////////////////////////////////
+
+    /**
+     * Path to server
+     * Default is current directory (PWD / CWD) + DayZServer
+     */
+    "serverPath": "DayZServer",
+
+    /**
+     * Name of the server exe (Default is DayZServer_x64.exe)
+     */
+    "serverExe": "DayZServer_x64.exe",
+
+    /**
+     * Servers Game Port
+     */
+    "serverPort": 2302,
+
+    /**
+     * Path to server cfg
+     */
+    "serverCfgPath": "serverDZ.cfg",
+
+    /**
+     * Path to profiles
+     */
+    "profilesPath": "profiles",
+
+    /**
+     * Path to battleye
+     * Only set this if you know what your are doing
+     */
+    "battleyePath": "",
+
+    /**
+     * RCon Credentials
+     */
+    "rconPassword": "rcon",
+
+    /**
+     * RCon Port as required by DayZ Update 1.13 (https://feedback.bistudio.com/T159179)
+     * The default is 2306 to avoid any colissions
+     */
+    "rconPort": 2306,
+
+    /**
+     * Local mods
+     * Actual modnames like '@MyAwesomeMod'
+     */
+    "localMods": [],
+
+    /**
+     * Server mods
+     * Actual modnames like '@MyAwesomeMod'
+     */
+    "serverMods": [],
+
+    /**
+     * Server Startup Param doLogs
+     */
+    "doLogs": true,
+
+    /**
+     * Server Startup Param adminLog
+     */
+    "adminLog": true,
+
+    /**
+     * Server Startup Param netLog
+     */
+    "netLog": false,
+
+    /**
+     * Server Startup Param freezeCheck
+     */
+    "freezeCheck": true,
+
+    /**
+     * Server Startup Param filePatching
+     */
+    "filePatching": false,
+
+    /**
+     * Server Startup Param scriptDebug
+     */
+    "scriptDebug": true,
+
+    /**
+     * Server Startup Param scrAllowFileWrite
+     */
+    "scrAllowFileWrite": true,
+
+    /**
+     * Server Startup Param limitFps
+     */
+    "limitFPS": -1,
+
+    /**
+     * Server Startup Param cpuCount
+     */
+    "cpuCount": -1,
+
+    /**
+     * Server Startup Params (manual)
+     */
+    "serverLaunchParams": [],
+
+    /**
+     * Time (in ms) between each server check
+     */
+    "serverProcessPollIntervall": 30000,
+
+    ///////////////////////////// Backups ////////////////////////////////////////
+
+    /**
+     * Path where backups are stored
+     * Default is current directory (PWD / CWD) + backups
+     * 
+     * To schedule backups, use the the event scheduler and the event type 'backup'
+     * 
+     * To restore backups:
+     * - delete the mpmissions folder in the server folder
+     * - go to the backup folder
+     * - copy the mpmissions_{date} you want to restore into the server folder
+     * - rename the copied folder back to mpmissions
+     */
+    "backupPath": "backups",
+
+    /**
+     * Max age of backups in days
+     * Default is one week
+     */
+    "backupMaxAge": 7,
+
+    ///////////////////////////// Steam ////////////////////////////////////////
+
+    /**
+     * Path to steam CMD
+     * Default is current directory (PWD / CWD) + SteamCMD
+     */
+    "steamCmdPath": "SteamCMD",
+
+    /**
+     * Username for steam CMD
+     */
+    "steamUsername": "",
+
+    /**
+     * Optional if password is cached (manually logged in once)
+     */
+    "steamPassword": "",
+
+    /**
+     * Path to where the downloaded mods are located (relative or absolute)
+     * Default is current directory (PWD / CWD) + Workshop
+     * 
+     * Note: this is the folder that containes: steamapps/workshop/content/221100
+     * 
+     * Note2: we want this to be a folder outside the steamcmd folder
+     *  so we can delete the steamcmd folder in case of errors
+     */
+    "steamWorkshopPath": "Workshop",
+
+    /**
+     * List of Mod IDs (workshop id, not modname!) the server should use
+     */
+    "steamWsMods": [],
+
+    /**
+     * Whether or not to check for mod updates on each server restart
+     */
+    "updateModsBeforeServerStart": true,
+
+    /**
+     * Whether or not to check for mod updates when the manager is started
+     */
+    "updateModsOnStartup": true,
+
+    /**
+     * Whether or not to check for server updates on each server restart
+     */
+    "updateServerBeforeServerStart": true,
+
+    /**
+     * Whether or not to check for mod updates when the manager is started
+     */
+    "updateServerOnStartup": true,
+
+    /**
+     * Whether or not to use hardlink for mods instead of copying them
+     */
+    "linkModDirs": false,
+
+    /**
+     * Whether to deep compare mods instead of just checking for update timestamps
+     */
+    "copyModDeepCompare": false,
+
+    ///////////////////////////// Events ////////////////////////////////////////
+
+    /**
+     * Events are actions which can be scheduled to run at a given point in time or frequently
+     * 
+     * Events are defined by:
+     * name - string - name of the event
+     * cron - string - the cron format of when to execute this action
+     * params - string[] - optional params, e.g. the message
+     * 
+     * Types:
+     * 'restart' - restarts the server
+     * 'message' - sends a global messages to all players
+     * 'kickAll' - kicks all players
+     * 'lock' - locks the server (probably not working)
+     * 'unlock' - unlocks the server (probably not working)
+     * 'backup' - creates backup of mpmissions folder
+     * 
+     * 
+     * CRON - Format:
+     * ┌────────────── second (optional)
+     * │ ┌──────────── minute
+     * │ │ ┌────────── hour
+     * │ │ │ ┌──────── day of month
+     * │ │ │ │ ┌────── month
+     * │ │ │ │ │ ┌──── day of week
+     * │ │ │ │ │ │
+     * │ │ │ │ │ │
+     * * * * * * *
+     * 
+     * Examples:
+     * 
+     * List:
+     * '1,4,5 * * * *' - executes every first, fourth and fifth minute (i.e.: ... 15:05, 16:01, 16:04, 16:05, 17:01, 17:04, 17:05 ...)
+     * Range:
+     * '1-5 * * * *' - executes every 1,2,3,4,5 minute (i.e.: ... 15:05, 16:01, 16:02, 16:03, 16:04, 16:05, 17:01...)
+     * Multiples:
+     * '0/2 * * * *' - executes every two minutes (i.e.: ... 16:02, 16:04, 16:06, 16:08 ...)
+     * Combinations:
+     * '1-6/2 * * * *' - executes every two minutes in 1-10 range (i.e.: ... 15:06, 16:02, 16:04, 16:06, 17:02 ...)
+     * 
+     * You can generate and test cron formats with:
+     * https://crontab.guru/
+     * https://www.freeformatter.com/cron-expression-generator-quartz.html
+     * https://cronjob.xyz/
+     */
+    "events": [],
+
+    ///////////////////////////// Metrics ////////////////////////////////////////
+
+    /**
+     * Time (in ms) between each metric tick (read players, system status, etc.)
+     */
+    "metricPollIntervall": 10000,
+
+    /**
+     * Time (in ms) after which metrics will be removed (tick by tick)
+     * Default is 30 days
+     */
+    "metricMaxAge": 2592000,
+
+    ///////////////////////////// Hooks ////////////////////////////////////////
+
+    /**
+     * Hooks to define custom behaviour when certain events happen
+     */
+    "hooks": [],
+
+    ///////////////////////////// ServerCfg ////////////////////////////////////////
+
+    /**
+     * serverCfg
+     */
+    "serverCfg": {
+        "hostname": "EXAMPLE NAME",
+        "maxPlayers": 60,
+        "motd": [],
+        "motdInterval": 1,
+        "password": "",
+        "passwordAdmin": "",
+        "enableWhitelist": 0,
+        "BattlEye": 1,
+        "verifySignatures": 2,
+        "forceSameBuild": 1,
+        "guaranteedUpdates": 1,
+        "allowFilePatching": 0,
+        "steamQueryPort": 2305,
+        "maxPing": 200,
+        "speedhackDetection": 1,
+        "disableVoN": 0,
+        "vonCodecQuality": 20,
+        "disable3rdPerson": 0,
+        "disableCrosshair": 0,
+        "disableBaseDamage": 0,
+        "disableContainerDamage": 0,
+        "disableRespawnDialog": 0,
+        "respawnTime": 5,
+        "enableDebugMonitor": 1,
+        "disablePersonalLight": 1,
+        "lightingConfig": 0,
+        "serverTime": "SystemTime",
+        "serverTimeAcceleration": 12,
+        "serverNightTimeAcceleration": 1,
+        "serverTimePersistent": 0,
+        "loginQueueConcurrentPlayers": 5,
+        "loginQueueMaxPlayers": 500,
+        "simulatedPlayersBatch": 20,
+        "multithreadedReplication": 1,
+        "networkRangeClose": 20,
+        "networkRangeNear": 150,
+        "networkRangeFar": 1000,
+        "networkRangeDistantEffect": 4000,
+        "defaultVisibility": 1375,
+        "defaultObjectViewDistance": 1375,
+        "instanceId": 1,
+        "storeHouseStateDisabled": false,
+        "storageAutoFix": 1,
+        "timeStampFormat": "Short",
+        "logAverageFps": 30,
+        "logMemory": 30,
+        "logPlayers": 30,
+        "logFile": "server_console.log",
+        "adminLogPlayerHitsOnly": 0,
+        "adminLogPlacement": 0,
+        "adminLogBuildActions": 0,
+        "adminLogPlayerList": 0,
+        "Missions": {
+            "DayZ": {
+                "template": "dayzOffline.chernarusplus"
+            }
+        },
+        "enableCfgGameplayFile": 0
+    }
+}
