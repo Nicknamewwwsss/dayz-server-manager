@@ -134,7 +134,7 @@ The goal was to break down the initial effort to a minimum while providing confi
 ## Updating <hr>  
 
 This app was written with backwards compatibility in mind.<br>
-Sometimes, however, some bracking changes to the server manager config will occur.<br>
+Sometimes, however, some breaking changes to the server manager config will occur.<br>
 The best strategy to update is to take the config template of the new version and and modify it to match your old version.<br>
 This way you can not miss out on new properties which might be required.<br>
 
@@ -259,6 +259,8 @@ Example:<br>
 
 <br><a name="guide-add-workshop-mods"></a>
 ### Adding workshop mods <hr>  
+
+Note: You must use a steam account that owns Dayz in order to download workshop mods.<br>
 
 Workshop mods will be downloaded and updated everytime the server restarts (if not configured otherwise).<br>
 The steamWsMods property specifies a list of workshop mods to download.<br>
