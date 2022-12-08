@@ -8,6 +8,7 @@
 [![GitHub commits](https://img.shields.io/github/commits-since/Dev-Time/dayz-server-manager/latest.svg)](https://GitHub.com/Dev-Time/dayz-server-manager/commit/)
 [![Github all releases](https://img.shields.io/github/downloads/Dev-Time/dayz-server-manager/total.svg)](https://GitHub.com/Dev-Time/dayz-server-manager/releases/)  
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Dev-Time/dayz-server-manager)
 
 This tool aims to simplify the process of setting up a DayZ Standalone Server on a Windows Server.  
 The goal was to break down the initial effort to a minimum while providing configuration to nearly all aspects of the server administration process.
