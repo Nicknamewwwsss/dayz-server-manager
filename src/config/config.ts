@@ -729,9 +729,14 @@ export class Config {
     public steamWorkshopPath: string = 'Workshop';
 
     /**
-     * List of Mod IDs (workshop id, not modname!) the server should use
+     * List of Mod IDs (workshop id, not modname!) the server should use as client mods
      */
     public steamWsMods: (string | WorkshopMod)[] = [];
+
+    /**
+     * List of Mod IDs (workshop id, not modname!) the server should use as server mods
+     */
+    public steamWsServerMods: (string | WorkshopMod)[] = [];
 
     /**
      * Whether or not to check for mod updates on each server restart
