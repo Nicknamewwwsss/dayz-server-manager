@@ -75,9 +75,7 @@ class DayZServerManagerWatcher
 	
     void DayZServerManagerWatcher()
     {
-		#ifdef DZSM_DEBUG
 		PrintToRPT("DZSM ~ DayZServerManagerWatcher()");
-		#endif
 		
         if (!GetGame().IsClient())
 		{
@@ -88,14 +86,10 @@ class DayZServerManagerWatcher
 
 	void init()
 	{
-		#ifdef DZSM_DEBUG
 		PrintToRPT("DZSM ~ DayZServerManagerWatcher() - INIT");
-		#endif
 		
 		StartLoop();
-		#ifdef DZSM_DEBUG
 		PrintToRPT("DZSM ~ DayZServerManagerWatcher() - INIT DONE");
-		#endif
 	}
 
     float GetInterval()
