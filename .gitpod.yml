@@ -3,7 +3,8 @@
 # and commit this file to your remote git repository to share the goodness with others.
 
 tasks:
-  - init: nvm install 14 && nvm use 14 && npm install
+  - init: nvm install 14 && nvm use 14 && npm install && source ./install_dayz_tools.sh
+    command: npm start
 
 jetbrains:
   webstorm:
