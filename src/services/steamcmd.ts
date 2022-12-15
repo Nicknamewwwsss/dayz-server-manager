@@ -210,11 +210,11 @@ export class SteamCMD implements IService {
         const names = metaContent.match(/name[\s]*=.*/g) ?? [];
         const modName = names.pop()?.split('=')[1]?.trim() ?? '';
         if (modName) {
-            return '@' + modName
+            return `@${modName
                 .replace(/\//g, '-')
                 .replace(/\\/g, '-')
                 .replace(/ /g, '-')
-                .replace(/[^a-zA-Z0-9\-_]/g, '');
+                .replace(/[^a-zA-Z0-9\-_]/g, '')}`;
         }
         return '';
     }
@@ -331,9 +331,12 @@ export class SteamCMD implements IService {
 
     public async installMods(): Promise<boolean> {
         const modIds = this.manager.getModIdList();
-        return (await Promise.all(modIds.map((modId) => {
-            return this.installMod(modId);
-        }))).every((x) => x);
+        for (const modId of modIds) {
+            if (!await this.installMod(modId)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private async copyModKeys(modId: string): Promise<boolean> {
