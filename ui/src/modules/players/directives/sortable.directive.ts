@@ -4,6 +4,7 @@ export type SortDirection = 'asc' | 'desc' | '';
 const rotate: { [key: string]: SortDirection } = {
     'asc': 'desc',
     'desc': '',
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     '': 'asc',
 };
 

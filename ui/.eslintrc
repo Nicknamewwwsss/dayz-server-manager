@@ -60,6 +60,7 @@
             "error",
             "before"
         ],
+        "linebreak-style": ["error", "windows"],
         "@typescript-eslint/prefer-for-of": 0,
         "@typescript-eslint/member-ordering": 0,
         "@typescript-eslint/no-inferrable-types": 0,
