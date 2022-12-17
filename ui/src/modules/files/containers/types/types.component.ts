@@ -636,7 +636,7 @@ export class TypesComponent implements OnInit {
         let result = true;
         this.validationErrors = [];
         for (const type of this.files[this.activeTab].content.types.type) {
-            if (Number(type.min[0]) >= Number(type.nominal[0])) {
+            if (Number(type.min[0]) > Number(type.nominal[0])) {
                 result = false;
                 this.validationErrors.push(`${type.$.name}: Min > Nominal`);
             }
